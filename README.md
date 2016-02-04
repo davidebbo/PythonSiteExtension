@@ -9,9 +9,11 @@ Use these steps to install it:
 - Create a new Web App. **Don't turn on Python in portal.**
 - Under the Web App, choose Tools / Extensions
 - Add the Python Install extension. It'll be toward the end of the list, and there is no search function. UI is not great, but you'll find it! :)
-- Deploy your site bits to wwwroot, and you should be ready to run!
+- You're done!
 
-Note that as is the case when using the 'built-in' Python versions, you need to include a web.config file, which will look like this (change `WSGI_HANDLER` to fit your scenario):
+Note that if you don't already have a `web.config`, the extension will deploy a sample site into your `site\wwwroot` folder to help get started. You can then replace it with your own bits. 
+
+The default sample comes with a `web.config` file that looks like this, and that you'll modify to fit your needs:
 
 ```xml
 <configuration>
@@ -19,6 +21,11 @@ Note that as is the case when using the 'built-in' Python versions, you need to 
     <add key="pythonpath" value="%SystemDrive%\home\site\wwwroot" />
     <add key="WSGI_HANDLER" value="hostingstart-python.application" />
   </appSettings>
+  <system.webServer>
+    <handlers>
+      <add name="Python35_via_FastCGI" path="*" verb="*" modules="FastCgiModule" scriptProcessor="d:\home\Python35\Python.exe|d:\home\Python35\wfastcgi.py" resourceType="Either" />
+    </handlers>
+  </system.webServer>
 </configuration>
 ```
 
