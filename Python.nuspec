@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>python</id>
+    <title>Python Installer</title>
+    <version>3.5.1.0</version>
+    <authors>David Ebbo</authors>
+    <licenseUrl>https://docs.python.org/3/license.html</licenseUrl>
+    <projectUrl>https://github.com/davidebbo/PythonSiteExtension</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Installs Python in a Web App</description>
+    <iconUrl>http://www.iconsplace.com/icons/preview/orange/python-48.png</iconUrl>
+    <tags>python</tags>
+  </metadata>
+  <files>
+    <file src="content\**\*.*" target="content" />
+  </files>
+</package>

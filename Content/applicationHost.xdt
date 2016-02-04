@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <system.webServer>
+    <fastCgi>
+      <application fullPath="D:\home\Python35\python.exe" arguments="D:\home\Python35\wfastcgi.py" maxInstances="4" xdt:Transform="Insert" />
+    </fastCgi>
+  </system.webServer>
+  <location path="%XDT_SITENAME%" xdt:Locator="Match(path)">
+    <system.webServer>
+      <handlers xdt:Transform="Replace">
+        <add name="Python35_via_FastCGI" path="*" verb="*" modules="FastCgiModule" scriptProcessor="d:\home\Python35\Python.exe|d:\home\Python35\wfastcgi.py" resourceType="Either" />
+      </handlers>
+    </system.webServer>
+  </location>
+</configuration>

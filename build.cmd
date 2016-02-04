@@ -1,0 +1,3 @@
+@echo Off
+
+nuget pack
